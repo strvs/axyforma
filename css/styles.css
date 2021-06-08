@@ -683,6 +683,28 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 .dealers-item:nth-child(even) .dealers-item-logo {border-radius:50%}
 .dealers-item-title {padding:26px 0 0 0; font-weight:bold; font-size:20px; line-height:22px; letter-spacing:-0.02em}
 
+.contacts-menu {margin:-27px -15px 0 -15px; position:relative}
+.contacts-menu::after {content:""; display:block; clear:both}
+.contacts-item {float:left; width:33.33%; padding:0 15px}
+.contacts-item-title {font-weight:bold; font-size:50px; line-height:45px; letter-spacing:-0.02em}
+.contacts-item-title a {color:#000; text-decoration:none}
+.contacts-item-title a:hover,
+.contacts-item.active .contacts-item-title a {color:#6669ab}
+.contacts-item-title a svg {display:inline-block; vertical-align:top; margin:0 0 0 5px; width:35px; height:40px; fill:#000; transition:fill 0.2s}
+.contacts-item-title a:hover svg,
+.contacts-item.active .contacts-item-title a svg {fill:#6669ab}
+.contacts-item-address {margin:38px 0 0 0; font-size:18px; line-height:27px; font-weight:normal}
+.contacts-item-address a {color:#000; text-decoration:none; border-bottom:1px dashed #665fb7; transition:border-color 0.2s}
+.contacts-item-address a:hover {border-color:transparent}
+.contacts-item-email {margin:17px 0 0 0; font-size:18px; line-height:18px; font-weight:normal}
+.contacts-item-email a {color:#6669ab; text-decoration:none}
+.contacts-item-email a:hover {color:#000}
+.contacts-item-phone {margin:24px 0 0 0; font-size:18px; line-height:18px; font-weight:900}
+.contacts-item-phone a {color:#000; text-decoration:none}
+.contacts-item-phone a:hover {color:#6669ab}
+
+.contacts-map {margin:55px calc(1130px / 2 - 100vw / 2) 0 calc(1130px / 2 - 100vw / 2); height:500px}
+
 .feedback {background:#e8e9ff; margin:100px 0 0 0; position:relative; overflow:hidden}
 .feedback-element {position:absolute; left:50%; top:34px; margin-left:-670px}
 .feedback-element svg {display:block; width:507px; height:581px; fill:#fff}
