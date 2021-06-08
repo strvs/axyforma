@@ -1405,16 +1405,8 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 .about-services-list {margin:11px -15px 0 -15px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; position:relative; overflow:hidden}
 .about-services-list.slick-initialized {overflow:visible}
 .about-services-item {display:inline-block; vertical-align:top; width:25%; padding:0 15px; white-space:normal}
-.about-services-item-photo {height:292px; text-align:center; line-height:292px}
-.about-services-item-photo-inner {display:inline-block; vertical-align:middle; position:relative; width:224px; height:224px}
-.about-services-item-photo-1-bg {position:absolute; left:0; top:0; width:224px; height:224px; background:url(../images/about-services-1.svg) no-repeat}
-.about-services-item-photo-1-photo {position:absolute; left:0; top:0; width:224px; height:224px; background:url(../images/about-services-1.png) no-repeat}
-.about-services-item-photo-2-bg {position:absolute; left:-52px; top:-43px; width:319px; height:308px; background:url(../images/about-services-2.svg) no-repeat}
-.about-services-item-photo-2-photo {position:absolute; left:2px; top:-55px; width:272px; height:288px; background:url(../images/about-services-2.png) no-repeat}
-.about-services-item-photo-3-bg {position:absolute; left:0; top:0; width:224px; height:224px; background:url(../images/about-services-3.svg) no-repeat}
-.about-services-item-photo-3-photo {position:absolute; left:0; top:0; width:284px; height:224px; background:url(../images/about-services-3.png) no-repeat}
-.about-services-item-photo-4-bg {position:absolute; left:-3px; top:-10px; width:257px; height:244px; background:url(../images/about-services-4.svg) no-repeat}
-.about-services-item-photo-4-photo {position:absolute; left:25px; top:8px; width:144px; height:199px; background:url(../images/about-services-4.png) no-repeat}
+.about-services-item-photo {height:292px; text-align:left; line-height:292px}
+.about-services-item-photo img {display:inline-block; vertical-align:middle; max-width:none; max-height:292px}
 .about-services-item-title {font-weight:bold; font-size:22px; line-height:26px; letter-spacing:-0.02em}
 .about-services-list .slick-prev,
 .about-services-list .slick-next {display:block; position:absolute; z-index:2; top:-94px; width:94px; height:94px; border:none; border-radius:0; margin:0; padding:15px; outline:none; -webkit-appearance:none; cursor:pointer; background:none}
@@ -1432,16 +1424,8 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
     .about-services-list {margin:21px -10px 0 -10px}
     .about-services-item {padding:0 10px}
     .about-services-item-photo {height:157px; line-height:157px}
-    .about-services-item-photo-inner {width:157px; height:157px}
+    .about-services-item-photo img {max-height:157px}
     .about-services-item-title {padding:15px 0 0 0}
-    .about-services-item-photo-1-bg {left:4px; width:157px; height:157px; background-size:100% 100%}
-    .about-services-item-photo-1-photo {left:4px; width:157px; height:157px; background-size:100% 100%}
-    .about-services-item-photo-2-bg {left:-27px; top:6px; width:167px; height:157px; background-size:100% 100%}
-    .about-services-item-photo-2-photo {left:1px; top:0; width:139px; height:147px; background-size:100% 100%}
-    .about-services-item-photo-3-bg {left:4px; width:157px; height:157px; background-size:100% 100%}
-    .about-services-item-photo-3-photo {left:4px; top:0; width:199px; height:157px; background-size:100% 100%}
-    .about-services-item-photo-4-bg {left:-4px; top:0; width:165px; height:157px; background-size:100% 100%}
-    .about-services-item-photo-4-photo {left:14px; top:11px; width:92px; height:127px; background-size:100% 100%}
     .about-services-list .slick-prev,
     .about-services-list .slick-next {top:-62px; width:50px; height:50px; padding:0}
     .about-services-list .slick-prev {right:81px}
@@ -1456,15 +1440,7 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
     .about-services-list .slick-list {overflow:visible}
     .about-services-item {width:100%; padding:0 18px}
     .about-services-item-photo {text-align:left; height:208px; line-height:208px}
-    .about-services-item-photo-inner {width:208px; height:208px}
-    .about-services-item-photo-1-bg {left:0; width:208px; height:208px}
-    .about-services-item-photo-1-photo {left:0; width:208px; height:208px}
-    .about-services-item-photo-2-bg {left:-35px; top:0; width:221px; height:208px}
-    .about-services-item-photo-2-photo {left:2px; top:25px; width:184px; height:147px}
-    .about-services-item-photo-3-bg {left:0; width:208px; height:208px}
-    .about-services-item-photo-3-photo {left:0; top:0; width:264px; height:208px}
-    .about-services-item-photo-4-bg {left:0; top:0; width:219px; height:208px}
-    .about-services-item-photo-4-photo {left:24px; top:15px; width:122px; height:168px}
+    .about-services-item-photo img {max-height:208px}
     .about-services-item-title {padding:19px 0 0 0; font-size:24px; line-height:29px}
 }
 
