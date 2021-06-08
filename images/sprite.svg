@@ -80,4 +80,14 @@
         <line x1="44.4707" y1="44.1775" x2="0.646691" y2="0.353554" />
     </symbol>
 
+    <symbol viewBox="0 0 25 15" id="mobile-menu-link">
+        <line y1="7.5" x2="25" y2="7.5" />
+        <line y1="0.5" x2="25" y2="0.5" />
+        <line y1="14.5" x2="25" y2="14.5" />
+    </symbol>
+
+    <symbol viewBox="0 0 37 37" id="mobile-menu-close">
+        <path d="M1 1L36 36M36 1L1 36" />
+    </symbol>
+
 </svg>

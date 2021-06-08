@@ -26,7 +26,13 @@ $(document).ready(function() {
         slidesToScroll: 4,
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-next"></use></svg></button>',
-        dots: false
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1149,
+                settings: 'unslick'
+            }
+        ]
     });
 
     $('.project-content-list').slick({
@@ -35,7 +41,13 @@ $(document).ready(function() {
         slidesToScroll: 4,
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-next"></use></svg></button>',
-        dots: false
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: 'unslick'
+            }
+        ]
     });
 
     $('.axyforma-clients-list').slick({
@@ -44,7 +56,13 @@ $(document).ready(function() {
         slidesToScroll: 5,
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-next"></use></svg></button>',
-        dots: false
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1149,
+                settings: 'unslick'
+            }
+        ]
     });
 
     $('.main-projects-list').each(function() {
@@ -58,7 +76,15 @@ $(document).ready(function() {
             prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-prev"></use></svg></button>',
             nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-next"></use></svg></button>',
             adaptiveHeight: true,
-            dots: false
+            dots: false,
+            responsive: [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        arrows: false
+                    }
+                }
+            ]
         }).on('setPosition', function(event, slick) {
             curBlock.find('.main-projects-count-current').html(curGallery.slick('slickCurrentSlide') + 1);
         }).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
@@ -80,7 +106,17 @@ $(document).ready(function() {
         slidesToScroll: 4,
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-next"></use></svg></button>',
-        dots: false
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     });
 
     $('.line-content').each(function() {
@@ -115,7 +151,7 @@ $(document).ready(function() {
         }
         e.preventDefault();
     });
-    
+
     $('.contacts-item-title a, .contacts-item-address a').click(function(e) {
         var curItem = $(this).parents().filter('.contacts-item');
         if (!curItem.hasClass('active')) {
@@ -125,6 +161,41 @@ $(document).ready(function() {
             myMap.setCenter(coords[curIndex]);
         }
         e.preventDefault();
+    });
+
+    $('.mobile-menu-link').click(function(e) {
+        var curScroll = $(window).scrollTop();
+        $('html').addClass('mobile-menu-open');
+        $('.wrapper').css({'top': -curScroll});
+        $('.wrapper').data('curScroll', curScroll);
+        e.preventDefault();
+    });
+
+    $('.mobile-menu-close').click(function(e) {
+        if ($('html').hasClass('mobile-submenu-open')) {
+            $('html').removeClass('mobile-submenu-open');
+            $('.nav ul li.open').removeClass('open');
+        } else {
+            $('html').removeClass('mobile-menu-open');
+            $('.wrapper').css({'top': 'auto'});
+            $(window).scrollTop($('.wrapper').data('curScroll'));
+        }
+        e.preventDefault();
+    });
+
+    $('.nav li').each(function() {
+        if ($(this).find('ul').length > 0) {
+            $(this).addClass('with-submenu');
+        }
+    });
+
+    $('.nav ul li a').click(function(e) {
+        var curLi = $(this).parent();
+        if ($(window).width() < 1150 && curLi.find('ul').length > 0) {
+            $('html').addClass('mobile-submenu-open');
+            curLi.addClass('open');
+            e.preventDefault();
+        }
     });
 
 });
@@ -150,7 +221,7 @@ $(window).on('load resize scroll', function() {
         } else {
             $('.line-menu').removeClass('fixed');
         }
-        
+
         $('.line-menu-inner li').each(function() {
             var curLi = $(this);
             var curBlock = $(curLi.find('a').attr('href'));
@@ -160,4 +231,44 @@ $(window).on('load resize scroll', function() {
             }
         });
     }
+});
+
+$(window).on('load resize', function() {
+
+    if ($('.table-scroll').length > 0) {
+        if ($(window).width() < 1146) {
+            $('.table-scroll').each(function() {
+                var curTableScroll = $(this);
+                curTableScroll.mCustomScrollbar({
+                    axis: 'x',
+                    callbacks: {
+                        onInit: function() {
+                            curTableScroll.removeClass('with-left');
+                            curTableScroll.addClass('with-right');
+                        },
+
+                        whileScrolling: function() {
+                            if (this.mcs.leftPct == 100) {
+                                curTableScroll.removeClass('with-right');
+                            } else {
+                                curTableScroll.addClass('with-right');
+                            }
+
+                            if (this.mcs.leftPct == 0) {
+                                curTableScroll.removeClass('with-left');
+                            } else {
+                                curTableScroll.addClass('with-left');
+
+                            }
+                        }
+                    }
+                });
+            });
+        } else {
+            if ($('.table-scroll').length > 0) {
+                $('.table-scroll').mCustomScrollbar('destroy');
+            }
+        }
+    }
+
 });
