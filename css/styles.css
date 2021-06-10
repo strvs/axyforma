@@ -962,6 +962,8 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 .main-projects.line-projects {margin:134px 0 0 0}
 .line-projects h2 {margin:0}
 .line-projects .main-projects-wrapper {margin:43px calc(1130px / 2 - 100vw / 2) 0 0}
+.line-projects .main-projects-item-photo-inner {background-size:contain}
+
 .line-projects .main-projects-item h4 {margin:-50px 0 0 190px; padding:50px calc(100vw / 2 - 1130px / 2 + 200px) 0 93px; position:relative; background:#fff; white-space:normal}
 .line-projects .main-projects-item-link {position:relative; margin:20px 0 0 283px}
 .line-projects .main-projects-list .slick-prev,
@@ -1032,7 +1034,10 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 }
 
 @media (max-width:767px) {
-    .line-content-item {width:50%}
+    .line-content-list {white-space:nowrap; overflow:auto}
+    .line-content-item {width:234px}
+    .line-content-item+.line-content-item+.line-content-item+.line-content-item+.line-content-item+.line-content-item+.line-content-item+.line-content-item+.line-content-item {display:inline-block}
+    .line-content-more.visible {display:none}
 }
 
 .line-tech {margin:144px 0 0 0}
@@ -1062,7 +1067,11 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 .line-tech-tabs {margin:40px 0 0 0; position:relative}
 .line-tech-tab {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s}
 .line-tech-tab.active {position:relative; left:auto; top:auto; opacity:1}
-.wrapper table td.line-tech-label {color:#6669ab; font-weight:bold; font-size:16px; line-height:21px}
+
+.wrapper .line-tech-tabs tr:first-child td {border:none; color:#000; text-align:left; font-weight:bold; font-size:14px; line-height:14px; vertical-align:bottom; padding:0 0 18px 30px; position:relative}
+.wrapper .line-tech-tabs tr td:first-child {color:#6669ab; font-weight:bold; font-size:16px; line-height:21px}
+.wrapper .line-tech-tabs tr:first-child td:first-child {padding-left:0; color:#000; font-size:14px; line-height:18px}
+.wrapper .line-tech-tabs tr:first-child td {border-top:none; border-bottom:1px solid #000}
 
 .line-docs {margin:132px 0 0 0}
 .line-docs h2 {margin:0}

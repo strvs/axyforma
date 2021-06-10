@@ -93,11 +93,13 @@ $(document).ready(function() {
     });
 
     $('.main-partners-list-inner').mCustomScrollbar({
-        axis: 'x'
+        axis: 'x',
+        scrollInertia: 0
     });
 
     $('.line-compare-list-inner').mCustomScrollbar({
-        axis: 'x'
+        axis: 'x',
+        scrollInertia: 0
     });
 
     $('.about-services-list').slick({
@@ -270,6 +272,7 @@ $(window).on('load resize', function() {
                 var curTableScroll = $(this);
                 curTableScroll.mCustomScrollbar({
                     axis: 'x',
+                    scrollInertia: 0,
                     callbacks: {
                         onInit: function() {
                             curTableScroll.removeClass('with-left');
