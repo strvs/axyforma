@@ -1742,6 +1742,19 @@ footer {background:#000; margin:100px 0 0 0; color:#fff}
     .window-close:hover svg {stroke:#6669ab}
 }
 
+@media (max-width:1280px) {
+    .window {background:#e8e9ff; text-align:left}
+    .window::before {display:none}
+    .window-container {margin:111px 0 0 0}
+    .window-close {right:10px; top:-91px; width:35px; height:35px}
+    .window-close svg {width:35px; height:35px}
+}
+
+@media (max-width:767px) {
+    .window-container {margin:130px 0 0 0}
+    .window-close {top:-110px}
+}
+
 .window-feedback {width:990px; padding:40px 165px 94px 94px}
 .window-feedback .feedback-container {padding:0}
 .window-feedback .feedback-title {font-size:70px; line-height:56px; width:356px; position:absolute; left:-384px; top:50%; transform:translateY(-50%); letter-spacing:-0.05em}
@@ -1750,17 +1763,34 @@ footer {background:#000; margin:100px 0 0 0; color:#fff}
 .window-feedback .feedback-form-field:last-child {width:50%}
 
 @media (max-width:1280px) {
-    .window-feedback {padding:40px 165px 94px 194px}
-    .window-feedback .feedback-title {left:-384px}
-}
-
-@media (max-width:1149px) {
-    .window-feedback {width:700px; padding:40px}
-    .window-feedback .feedback-title {font-size:45px; line-height:40px; width:auto; position:relative; left:auto; top:auto; transform:none; letter-spacing:-0.02em}
+    .window-feedback {width:100vw; padding:78px 10px 79px 10px}
+    .window-feedback .feedback-title {left:0; top:-144px; font-size:45px; line-height:40px; width:325px; transform:none; letter-spacing:-0.02em}
+    .window-feedback .feedback-container form {margin:0 -15px}
+    .window-feedback .feedback-container form::after {content:""; display:block; clear:both}
+    .window-feedback .form-input {float:left; margin:0 15px; width:calc(33.33% - 30px)}
+    .window-feedback .feedback-form-field {width:50%}
+    .window-feedback .feedback-form-field .form-input {width:100%}
+    .window-feedback .form-input textarea {height:75px}
+    .window-feedback .feedback-form-row {margin:0; float:left; width:calc(66.66% - 15px)}
+    .window-feedback .feedback-form-row+.form-input {width:calc(100% - 30px); margin:46px 15px 0 15px}
+    .window-feedback .feedback-form-ctrl {margin:30px 0 0 0; float:left; clear:left; width:100%}
+    .window-feedback .feedback-form-policy {width:66.66%}
+    .window-feedback .feedback-form-submit {width:33.33%}
 }
 
 @media (max-width:767px) {
-    .window-feedback {width:90vw; padding:20px}
+    .window-feedback {padding:59px 17px 51px 17px}
+    .window-feedback .feedback-title {top:-124px}
     .window-feedback .feedback-form-field {width:auto}
     .window-feedback .feedback-form-field:last-child {width:auto}
+    .window-feedback .feedback-container form {margin:0}
+    .window-feedback .form-input {float:none; margin:0; width:auto}
+    .window-feedback .feedback-form-field {width:auto}
+    .window-feedback .feedback-form-field .form-input {width:auto}
+    .window-feedback .feedback-form-row {float:none; width:auto}
+    .window-feedback .feedback-form-row+.form-input {width:auto; margin:46px 0 0 0}
+    .window-feedback .feedback-form-ctrl {margin:25px 0 0 0; float:none; clear:none; width:auto}
+    .window-feedback .feedback-form-policy {width:auto}
+    .window-feedback .feedback-form-submit {width:255px}
+    .window-feedback .feedback-form-submit .btn {width:100%}
 }
