@@ -17,7 +17,10 @@ $(document).ready(function() {
         slidesToScroll: 1,
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-next"></use></svg></button>',
-        dots: false
+        dots: false,
+        autoplay: true,
+        pauseOnHover: false,
+        pauseOnFocus: false
     });
 
     $('.line-docs-serts-list').slick({
@@ -239,13 +242,13 @@ function initForm(curForm) {
 $(window).on('load resize scroll', function() {
     var curScroll = $(window).scrollTop();
     var curHeight = $(window).height();
-    
+
     if (curScroll > 0) {
         $('header').addClass('fixed');
     } else {
         $('header').removeClass('fixed');
     }
-    
+
     if ($('.line-menu').length > 0) {
         if (curScroll >= $('.line-menu').offset().top - $('header').height()) {
             $('.line-menu').addClass('fixed');
@@ -359,3 +362,141 @@ function windowClose() {
         $(window).scrollTop($('.wrapper').data('curScroll'));
     }
 }
+
+
+$(window).on('load resize scroll', function() {
+    if ($(window).width() > 1145) {
+
+        var windowScroll = $(this).scrollTop();
+
+        $('body').append('<div id="body-test-height" style="position:fixed; left:0; top:0; right:0; bottom:0; z-index:-1"></div>');
+        var windowHeight = $('#body-test-height').height();
+        $('#body-test-height').remove();
+
+        $('.main-complex-title, .main-production-anonce, .axyforma-title, h2, h3, h4, .main-production-title, .main-projects-title, .main-partners-title, .line-anonce-title').each(function() {
+            var curRow = $(this);
+
+            var curPosition = windowScroll + windowHeight - windowHeight * 1/4;
+
+            var curStart = curRow.offset().top - windowHeight * 1/4;
+            var curStop = curRow.offset().top - windowHeight * 2/4;
+            var curPersent = (curPosition - curStart) / (curStart - curStop);
+
+            if (curPersent >= 0) {
+                if (curPersent <= 1) {
+                    curRow.css({'transform': 'translateY(' + (30 - 30 * curPersent) + 'px)', 'opacity': curPersent});
+                } else {
+                    curRow.css({'transform': 'translateY(0px)', 'opacity': 1});
+                }
+            } else {
+                curRow.css({'transform': 'translateY(30px)', 'opacity': 0});
+            }
+        });
+
+        $('.main-production-photo img, .main-projects-item-photo-inner img, .lines-item-preview-img img, .line-solution-photo-img img, .list-header-text, .about-brand-photo img').each(function() {
+            var curRow = $(this);
+            var curParent = $(this).parent();
+
+            var curPosition = windowScroll + windowHeight;
+
+            var curStart = curParent.offset().top;
+            var curStop = curParent.offset().top + curParent.height() + windowHeight;
+            var curPersent = -(curPosition - curStart) / (curStart - curStop);
+
+            if (curPersent >= 0) {
+                if (curPersent <= 1) {
+                    curRow.css({'transform': 'translateY(' + (-100 * curPersent) + 'px)'});
+                } else {
+                    curRow.css({'transform': 'translateY(-100px)'});
+                }
+            } else {
+                curRow.css({'transform': 'translateY(0)'});
+            }
+        });
+
+        $('.projects-item:nth-child(odd) a').each(function() {
+            var curRow = $(this);
+            var curParent = $(this).parent();
+
+            var curPosition = windowScroll + windowHeight;
+
+            var curStart = curParent.offset().top;
+            var curStop = curParent.offset().top + curParent.height() + windowHeight;
+            var curPersent = -(curPosition - curStart) / (curStart - curStop);
+
+            if (curPersent >= 0) {
+                if (curPersent <= 1) {
+                    curRow.css({'transform': 'translateY(' + (-100 * curPersent) + 'px)'});
+                } else {
+                    curRow.css({'transform': 'translateY(-100px)'});
+                }
+            } else {
+                curRow.css({'transform': 'translateY(0)'});
+            }
+        });
+
+        $('.projects-item:nth-child(even) a').each(function() {
+            var curRow = $(this);
+            var curParent = $(this).parent();
+
+            var curPosition = windowScroll + windowHeight;
+
+            var curStart = curParent.offset().top;
+            var curStop = curParent.offset().top + curParent.height() + windowHeight;
+            var curPersent = -(curPosition - curStart) / (curStart - curStop);
+
+            if (curPersent >= 0) {
+                if (curPersent <= 1) {
+                    curRow.css({'transform': 'translateY(' + (100 * curPersent) + 'px)'});
+                } else {
+                    curRow.css({'transform': 'translateY(100px)'});
+                }
+            } else {
+                curRow.css({'transform': 'translateY(0)'});
+            }
+        });
+
+        $('.project-gallery-item:nth-child(even) a').each(function() {
+            var curRow = $(this);
+            var curParent = $(this).parent();
+
+            var curPosition = windowScroll + windowHeight;
+
+            var curStart = curParent.offset().top;
+            var curStop = curParent.offset().top + curParent.height() + windowHeight;
+            var curPersent = -(curPosition - curStart) / (curStart - curStop);
+
+            if (curPersent >= 0) {
+                if (curPersent <= 1) {
+                    curRow.css({'transform': 'translateY(' + (-50 * curPersent) + 'px)'});
+                } else {
+                    curRow.css({'transform': 'translateY(-50px)'});
+                }
+            } else {
+                curRow.css({'transform': 'translateY(0)'});
+            }
+        });
+
+        $('.project-gallery-item:nth-child(odd) a').each(function() {
+            var curRow = $(this);
+            var curParent = $(this).parent();
+
+            var curPosition = windowScroll + windowHeight;
+
+            var curStart = curParent.offset().top;
+            var curStop = curParent.offset().top + curParent.height() + windowHeight;
+            var curPersent = -(curPosition - curStart) / (curStart - curStop);
+
+            if (curPersent >= 0) {
+                if (curPersent <= 1) {
+                    curRow.css({'transform': 'translateY(' + (50 * curPersent) + 'px)'});
+                } else {
+                    curRow.css({'transform': 'translateY(50px)'});
+                }
+            } else {
+                curRow.css({'transform': 'translateY(0)'});
+            }
+        });
+    }
+
+});

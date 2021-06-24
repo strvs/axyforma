@@ -307,10 +307,13 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 .slider-item-content {height:700px; position:relative}
 .slider-item-content a {display:block; color:#000; text-decoration:none; height:700px}
 .slider-item-img {position:absolute; left:188px; top:0; bottom:0; right:-999px}
-.slider-item-img img {display:block; position:absolute; left:0; bottom:0; max-width:none; max-height:100%}
-.slider-item-title {position:relative; padding:137px 0 0 0; font-weight:900; font-size:200px; line-height:160px; letter-spacing:-0.05em}
+.slider-item-img img {display:block; position:absolute; left:0; bottom:0; max-width:none; max-height:100%; transform:translateX(100px); transition:transform 0.6s 0.3s}
+.slick-current .slider-item-img img {transform:none}
+.slider-item-title {position:relative; padding:137px 0 0 0; font-weight:900; font-size:200px; line-height:160px; letter-spacing:-0.05em; transform:translateX(100px); transition:transform 0.3s 0.3s}
+.slick-current .slider-item-title {transform:none}
 .slider-item-title-inner {display:inline-block; position:relative}
-.slider-item-title-inner span {display:block; font:italic 24px/31px RoyalTheatreSans, sans-serif; position:absolute; right:0; top:8px; letter-spacing:0}
+.slider-item-title-inner span {display:block; font:italic 24px/31px RoyalTheatreSans, sans-serif; position:absolute; right:0; top:8px; letter-spacing:0; transform:translateX(100px); transition:transform 0.3s 0.3s}
+.slick-current .slider-item-title-inner span {transform:none}
 .slider-item-link {position:relative; margin:40px 0 0 0; width:70px; height:70px; border:1px solid #000; border-radius:50%; transition:border-color 0.2s, background-color 0.2s}
 .slider-item-link svg {display:block; width:24px; height:24px; position:absolute; left:50%; top:50%; margin:-12px 0 0 -12px; fill:none; stroke:#000; transition:stroke 0.2s}
 @media (min-width:768px) {
@@ -554,7 +557,10 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
     .main-projects-item a:hover {color:#6669ab}
 }
 .main-projects-item-photo {position:relative; height:750px; overflow:hidden}
-.main-projects-item-photo-inner {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover}
+.main-projects-item-photo-inner {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover; transition:transform 0.2s}
+@media (min-width:768px) {
+    .main-projects-item a:hover .main-projects-item-photo-inner {transform:scale(1.05)}
+}
 .main-projects-item-title {position:relative; margin:-50px 0 0 230px; background:#fff; padding:50px 545px 0 123px; font-weight:bold; font-size:40px; line-height:48px; letter-spacing:0}
 .main-projects-item-link {position:relative; margin:19px 0 0 353px; width:70px; height:70px; border:1px solid #000; border-radius:50%; transition:border-color 0.2s, background-color 0.2s}
 .main-projects-item-link svg {display:block; width:24px; height:24px; position:absolute; left:50%; top:50%; margin:-12px 0 0 -12px; fill:none; stroke:#000; transition:stroke 0.2s}
@@ -659,7 +665,7 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 .lines-groups ul {margin:0; padding:0; list-style:none; font-size:30px; line-height:35px; column-count:5; font-weight:bold; letter-spacing:-0.02em}
 .lines-groups ul li {margin:0; padding:20px 0 0 0; break-inside:avoid}
 .lines-groups ul li::before {display:none}
-.lines-groups ul li a {position:relative; padding:0 12px 0 29px; display:inline-block; text-decoration:none}
+.lines-groups ul li a {position:relative; padding:0 12px 0 29px; display:inline-block; text-decoration:none; z-index:1}
 @media (min-width:768px) {
     .lines-groups ul li a:hover {color:#fff !important}
 }
@@ -1251,8 +1257,11 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 .projects {margin:0 -15px; font-size:0; line-height:0; letter-spacing:-1px}
 .projects-item {display:inline-block; vertical-align:top; width:50%; padding:49px 15px 0 15px; position:relative}
 .projects-item:nth-child(even) {top:-60px}
-.projects-item a {display:block; text-decoration:none; color:#121212}
-.projects-item-preview img {display:block; width:100%}
+.projects-item a {display:block; text-decoration:none; color:#121212; position:relative; overflow:hidden}
+.projects-item-preview img {display:block; width:100%; transition:transform 0.2s}
+@media (min-width:768px) {
+    .projects-item a:hover .projects-item-preview img {transform:scale(1.05)} 
+}
 .projects-item-title {position:relative; margin:-60px 0 0 65px; background:#fff; padding:33px 95px 0 38px; font-size:24px; line-height:29px; letter-spacing:0; font-weight:bold}
 .projects-item-link {position:absolute; right:0; top:25px; width:70px; height:70px; border:1px solid #000; border-radius:50%; transition:border-color 0.2s, background-color 0.2s}
 .projects-item-link svg {display:block; width:24px; height:24px; position:absolute; left:50%; top:50%; margin:-12px 0 0 -12px; fill:none; stroke:#000; transition:stroke 0.2s}
@@ -1308,8 +1317,12 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 .project-gallery-list {margin:14px -15px 0 -15px; font-size:0; line-height:0; letter-spacing:-1px}
 .project-gallery-item {display:inline-block; vertical-align:top; width:50%; padding:30px 15px 0 15px; position:relative}
 .project-gallery-item:nth-child(even) {top:55px}
-.project-gallery-item a {display:block}
-.project-gallery-item img {display:block; width:100%}
+.project-gallery-item a {display:block; position:relative; overflow:hidden}
+.project-gallery-item img {display:block; width:100%; transition:transform 0.2s}
+
+@media (min-width:768px) {
+    .project-gallery-item a:hover img {transform:scale(1.05)}
+}
 
 @media (max-width:1149px) {
     .project-gallery {margin:82px 0 50px 0}
