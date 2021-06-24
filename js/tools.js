@@ -224,6 +224,8 @@ $(document).ready(function() {
         windowClose();
         e.preventDefault();
     });
+    
+    $(window).trigger('resize');
 
 });
 
@@ -363,7 +365,6 @@ function windowClose() {
     }
 }
 
-
 $(window).on('load resize scroll', function() {
     if ($(window).width() > 1145) {
 
@@ -373,7 +374,7 @@ $(window).on('load resize scroll', function() {
         var windowHeight = $('#body-test-height').height();
         $('#body-test-height').remove();
 
-        $('.main-complex-title, .main-production-anonce, .axyforma-title, h2, h3, h4, .main-production-title, .main-projects-title, .main-partners-title, .line-anonce-title').each(function() {
+        $('.main-complex-title, .main-production-anonce, .axyforma-title, h2, h3, h4, .main-production-title, .main-projects-title, .main-partners-title, .line-anonce-title, .lines-item-title, .lines-item-subtitle, .lines-item-text, .lines-item-zoom, .main-lines-more').each(function() {
             var curRow = $(this);
 
             var curPosition = windowScroll + windowHeight - windowHeight * 1/4;
@@ -383,13 +384,7 @@ $(window).on('load resize scroll', function() {
             var curPersent = (curPosition - curStart) / (curStart - curStop);
 
             if (curPersent >= 0) {
-                if (curPersent <= 1) {
-                    curRow.css({'transform': 'translateY(' + (30 - 30 * curPersent) + 'px)', 'opacity': curPersent});
-                } else {
-                    curRow.css({'transform': 'translateY(0px)', 'opacity': 1});
-                }
-            } else {
-                curRow.css({'transform': 'translateY(30px)', 'opacity': 0});
+                curRow.addClass('animated');
             }
         });
 
