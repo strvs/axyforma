@@ -561,7 +561,7 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 @media (min-width:768px) {
     .main-projects-item a:hover .main-projects-item-photo-inner {transform:scale(1.05)}
 }
-.main-projects-item-title {position:relative; margin:-50px 0 0 230px; background:#fff; padding:50px 545px 0 123px; font-weight:bold; font-size:40px; line-height:48px; letter-spacing:0}
+.main-projects-item-title {position:relative; margin:-100px 0 0 230px; background:#fff; padding:50px 545px 0 123px; font-weight:bold; font-size:40px; line-height:48px; letter-spacing:0}
 .main-projects-item-link {position:relative; margin:19px 0 0 353px; width:70px; height:70px; border:1px solid #000; border-radius:50%; transition:border-color 0.2s, background-color 0.2s}
 .main-projects-item-link svg {display:block; width:24px; height:24px; position:absolute; left:50%; top:50%; margin:-12px 0 0 -12px; fill:none; stroke:#000; transition:stroke 0.2s}
 @media (min-width:768px) {
@@ -1255,14 +1255,14 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 }
 
 .projects {margin:0 -15px; font-size:0; line-height:0; letter-spacing:-1px}
-.projects-item {display:inline-block; vertical-align:top; width:50%; padding:49px 15px 0 15px; position:relative}
-.projects-item:nth-child(even) {top:-60px}
+.projects-item {display:inline-block; vertical-align:top; width:50%; padding:60px 15px 0 15px; position:relative}
+.projects-item:nth-child(even) {top:-60px; padding-top:120px}
 .projects-item a {display:block; text-decoration:none; color:#121212; position:relative; overflow:hidden}
 .projects-item-preview img {display:block; width:100%; transition:transform 2s ease}
 @media (min-width:768px) {
     .projects-item a:hover .projects-item-preview img {transform:scale(1.05)}
 }
-.projects-item-title {position:relative; margin:-60px 0 0 65px; background:#fff; padding:33px 95px 0 38px; font-size:24px; line-height:29px; letter-spacing:0; font-weight:bold}
+.projects-item-title {position:relative; margin:-60px 0 0 65px; background:#fff; padding:33px 95px 0 38px; font-size:24px; line-height:29px; letter-spacing:0; font-weight:bold; min-height:95px}
 .projects-item-link {position:absolute; right:0; top:25px; width:70px; height:70px; border:1px solid #000; border-radius:50%; transition:border-color 0.2s, background-color 0.2s}
 .projects-item-link svg {display:block; width:24px; height:24px; position:absolute; left:50%; top:50%; margin:-12px 0 0 -12px; fill:none; stroke:#000; transition:stroke 0.2s}
 @media (min-width:768px) {
@@ -1272,18 +1272,18 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 
 @media (max-width:1149px) {
     .projects {margin:0 0 0 -25px}
-    .projects-item {padding:47px 0 0 25px}
-    .projects-item:nth-child(even) {top:-30px}
-    .projects-item-title {margin:-30px 0 0 25px; padding:25px 58px 0 28px; font-size:20px; line-height:24px}
+    .projects-item {padding:60px 0 0 25px}
+    .projects-item:nth-child(even) {top:-30px; padding-top:90px}
+    .projects-item-title {margin:-30px 0 0 25px; padding:25px 58px 0 28px; font-size:20px; line-height:24px; min-height:80px}
     .projects-item-link {top:30px; width:50px; height:50px}
     .projects-item-link svg {width:18px; height:18px; margin:-9px 0 0 -9px}
 }
 
 @media (max-width:767px) {
     .projects {margin:-145px 0 0 -18px}
-    .projects-item {padding:45px 0 0 0; display:block; width:auto}
-    .projects-item:nth-child(even) {top:auto}
-    .projects-item-title {margin:-31px 0 0 18px}
+    .projects-item {padding:60px 0 0 0; display:block; width:auto}
+    .projects-item:nth-child(even) {top:auto; padding-top:60px}
+    .projects-item-title {margin:-31px 0 0 18px; min-height:0}
 }
 
 .project-info {margin:0 calc(1130px / 2 - 100vw / 2) 0 0; position:relative}
@@ -1315,8 +1315,7 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 .project-gallery {margin:128px 0 55px 0}
 .project-gallery h2 {margin:0}
 .project-gallery-list {margin:14px -15px 0 -15px; font-size:0; line-height:0; letter-spacing:-1px}
-.project-gallery-item {display:inline-block; vertical-align:top; width:50%; padding:30px 15px 0 15px; position:relative}
-.project-gallery-item:nth-child(even) {top:55px}
+.project-gallery-item {display:inline-block; vertical-align:top; width:50%; padding:55px 15px 0 15px; position:relative}
 .project-gallery-item a {display:block; position:relative; overflow:hidden}
 .project-gallery-item img {display:block; width:100%; transition:transform 2s ease}
 
@@ -1327,15 +1326,13 @@ header {position:fixed; left:0; top:0; right:0; height:110px; background:#fff; z
 @media (max-width:1149px) {
     .project-gallery {margin:82px 0 50px 0}
     .project-gallery-list {margin:6px -10px 0 -10px}
-    .project-gallery-item {padding:20px 10px 0 10px}
-    .project-gallery-item:nth-child(even) {top:50px}
+    .project-gallery-item {padding:50px 10px 0 10px}
 }
 
 @media (max-width:767px) {
     .project-gallery {margin:66px 0 0 0}
     .project-gallery-list {margin:22px -18px 0 -18px; white-space:nowrap; position:relative; overflow:auto}
     .project-gallery-item {padding:20px 20px 0 0; width:284px}
-    .project-gallery-item:nth-child(even) {top:auto}
 }
 
 .project-line {margin:144px 0 0 0}

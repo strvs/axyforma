@@ -430,9 +430,9 @@ $(window).on('load resize scroll', function() {
             }
         });
 
-        $('.projects-item:nth-child(even) a').each(function() {
+        $('.project-gallery-list').each(function() {
             var curRow = $(this);
-            var curParent = $(this).parent();
+            var curParent = $(this);
 
             var curPosition = windowScroll + windowHeight;
 
@@ -442,56 +442,15 @@ $(window).on('load resize scroll', function() {
 
             if (curPersent >= 0) {
                 if (curPersent <= 1) {
-                    curRow.css({'transform': 'translateY(' + (100 * curPersent) + 'px)'});
+                    $('.project-gallery-item:nth-child(odd) a').css({'transform': 'translateY(' + (-200 * curPersent) + 'px)'});
                 } else {
-                    curRow.css({'transform': 'translateY(100px)'});
+                    $('.project-gallery-item:nth-child(odd) a').css({'transform': 'translateY(-200px)'});
                 }
             } else {
-                curRow.css({'transform': 'translateY(0)'});
+                $('.project-gallery-item:nth-child(odd) a').css({'transform': 'translateY(0)'});
             }
         });
 
-        $('.project-gallery-item:nth-child(even) a').each(function() {
-            var curRow = $(this);
-            var curParent = $(this).parent();
-
-            var curPosition = windowScroll + windowHeight;
-
-            var curStart = curParent.offset().top;
-            var curStop = curParent.offset().top + curParent.height() + windowHeight;
-            var curPersent = -(curPosition - curStart) / (curStart - curStop);
-
-            if (curPersent >= 0) {
-                if (curPersent <= 1) {
-                    curRow.css({'transform': 'translateY(' + (-50 * curPersent) + 'px)'});
-                } else {
-                    curRow.css({'transform': 'translateY(-50px)'});
-                }
-            } else {
-                curRow.css({'transform': 'translateY(0)'});
-            }
-        });
-
-        $('.project-gallery-item:nth-child(odd) a').each(function() {
-            var curRow = $(this);
-            var curParent = $(this).parent();
-
-            var curPosition = windowScroll + windowHeight;
-
-            var curStart = curParent.offset().top;
-            var curStop = curParent.offset().top + curParent.height() + windowHeight;
-            var curPersent = -(curPosition - curStart) / (curStart - curStop);
-
-            if (curPersent >= 0) {
-                if (curPersent <= 1) {
-                    curRow.css({'transform': 'translateY(' + (50 * curPersent) + 'px)'});
-                } else {
-                    curRow.css({'transform': 'translateY(50px)'});
-                }
-            } else {
-                curRow.css({'transform': 'translateY(0)'});
-            }
-        });
     }
 
 });
